@@ -7,21 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		795D10212B17E455009A4C26 /* OpenSesameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795D10202B17E455009A4C26 /* OpenSesameApp.swift */; };
 		795D10232B17E455009A4C26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795D10222B17E455009A4C26 /* ContentView.swift */; };
 		795D10252B17E456009A4C26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 795D10242B17E456009A4C26 /* Assets.xcassets */; };
 		795D10282B17E456009A4C26 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 795D10272B17E456009A4C26 /* Preview Assets.xcassets */; };
-		795D10302B17E625009A4C26 /* IDETemplateMacros.plist in Resources */ = {isa = PBXBuildFile; fileRef = 795D102F2B17E625009A4C26 /* IDETemplateMacros.plist */; };
+		7994791C2B17E8A1005A4851 /* OpenSesameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7994791B2B17E8A1005A4851 /* OpenSesameApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		795D101D2B17E455009A4C26 /* OpenSesame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenSesame.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		795D10202B17E455009A4C26 /* OpenSesameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSesameApp.swift; sourceTree = "<group>"; };
 		795D10222B17E455009A4C26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		795D10242B17E456009A4C26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		795D10272B17E456009A4C26 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		795D10292B17E456009A4C26 /* OpenSesame.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenSesame.entitlements; sourceTree = "<group>"; };
-		795D102F2B17E625009A4C26 /* IDETemplateMacros.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = IDETemplateMacros.plist; path = OpenSesame/IDETemplateMacros.plist; sourceTree = "<group>"; };
+		7994791B2B17E8A1005A4851 /* OpenSesameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSesameApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +36,6 @@
 		795D10142B17E455009A4C26 = {
 			isa = PBXGroup;
 			children = (
-				795D102F2B17E625009A4C26 /* IDETemplateMacros.plist */,
 				795D101F2B17E455009A4C26 /* OpenSesame */,
 				795D101E2B17E455009A4C26 /* Products */,
 			);
@@ -55,10 +52,10 @@
 		795D101F2B17E455009A4C26 /* OpenSesame */ = {
 			isa = PBXGroup;
 			children = (
-				795D10202B17E455009A4C26 /* OpenSesameApp.swift */,
-				795D10222B17E455009A4C26 /* ContentView.swift */,
-				795D10242B17E456009A4C26 /* Assets.xcassets */,
 				795D10292B17E456009A4C26 /* OpenSesame.entitlements */,
+				795D10222B17E455009A4C26 /* ContentView.swift */,
+				7994791B2B17E8A1005A4851 /* OpenSesameApp.swift */,
+				795D10242B17E456009A4C26 /* Assets.xcassets */,
 				795D10262B17E456009A4C26 /* Preview Content */,
 			);
 			path = OpenSesame;
@@ -130,7 +127,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				795D10302B17E625009A4C26 /* IDETemplateMacros.plist in Resources */,
 				795D10282B17E456009A4C26 /* Preview Assets.xcassets in Resources */,
 				795D10252B17E456009A4C26 /* Assets.xcassets in Resources */,
 			);
@@ -144,7 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				795D10232B17E455009A4C26 /* ContentView.swift in Sources */,
-				795D10212B17E455009A4C26 /* OpenSesameApp.swift in Sources */,
+				7994791C2B17E8A1005A4851 /* OpenSesameApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

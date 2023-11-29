@@ -1,9 +1,7 @@
-//
-//  OpenSesameApp.swift
-//  OpenSesame
-//
-//  Created by Wolf on 29/11/2023.
-//
+// OpenSesameApp.swift
+// OpenSesame by @rashadatjou
+// macOS(13.6) with Swift(5.0)
+// 29/11/2023
 
 import SwiftUI
 
