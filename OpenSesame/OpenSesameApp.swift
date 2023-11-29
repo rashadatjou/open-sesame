@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct OpenSesameApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  var body: some Scene {
+    MenuBarExtra(
+      "Utility App",
+      systemImage: "hammer"
+    ) {
+      ContentView()
     }
+    .menuBarExtraStyle(.window)
+  }
 }
