@@ -9,8 +9,8 @@ import SwiftUI
 struct OpenSesameApp: App {
   var body: some Scene {
     MenuBarExtra(
-      "Utility App",
-      systemImage: "hammer"
+      "Open Sesame",
+      systemImage: "circle.circle.fill"
     ) {
       ContentView()
     }
