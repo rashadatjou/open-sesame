@@ -12,7 +12,8 @@ let package = Package(
   ],
   targets: [
     .target(
-      name: "Sesame"
+      name: "Sesame",
+      path: "./Sources"
     ),
   ]
 )
