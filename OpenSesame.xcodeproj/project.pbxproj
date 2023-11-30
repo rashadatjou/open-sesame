@@ -11,7 +11,20 @@
 		795D10252B17E456009A4C26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 795D10242B17E456009A4C26 /* Assets.xcassets */; };
 		795D10282B17E456009A4C26 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 795D10272B17E456009A4C26 /* Preview Assets.xcassets */; };
 		7994791C2B17E8A1005A4851 /* OpenSesameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7994791B2B17E8A1005A4851 /* OpenSesameApp.swift */; };
+		79D4E5F62B18B56500507B9C /* SesameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D4E5F52B18B56500507B9C /* SesameTests.swift */; };
+		79D4E5FF2B18B6CF00507B9C /* Sesame in Frameworks */ = {isa = PBXBuildFile; productRef = 79D4E5FE2B18B6CF00507B9C /* Sesame */; };
+		79D4E6012B18B6D200507B9C /* Sesame in Frameworks */ = {isa = PBXBuildFile; productRef = 79D4E6002B18B6D200507B9C /* Sesame */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		79D4E5F72B18B56500507B9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 795D10152B17E455009A4C26 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 795D101C2B17E455009A4C26;
+			remoteInfo = OpenSesame;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		795D101D2B17E455009A4C26 /* OpenSesame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenSesame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,6 +33,9 @@
 		795D10272B17E456009A4C26 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		795D10292B17E456009A4C26 /* OpenSesame.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenSesame.entitlements; sourceTree = "<group>"; };
 		7994791B2B17E8A1005A4851 /* OpenSesameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSesameApp.swift; sourceTree = "<group>"; };
+		79D4E5F32B18B56500507B9C /* OpenSesameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenSesameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		79D4E5F52B18B56500507B9C /* SesameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SesameTests.swift; sourceTree = "<group>"; };
+		79D4E5FC2B18B5EA00507B9C /* Sesame */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Sesame; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +43,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79D4E5FF2B18B6CF00507B9C /* Sesame in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79D4E5F02B18B56500507B9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79D4E6012B18B6D200507B9C /* Sesame in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,8 +61,11 @@
 		795D10142B17E455009A4C26 = {
 			isa = PBXGroup;
 			children = (
+				79D4E5FC2B18B5EA00507B9C /* Sesame */,
 				795D101F2B17E455009A4C26 /* OpenSesame */,
+				79D4E5F42B18B56500507B9C /* OpenSesameTests */,
 				795D101E2B17E455009A4C26 /* Products */,
+				79D4E5FD2B18B6CF00507B9C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -45,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				795D101D2B17E455009A4C26 /* OpenSesame.app */,
+				79D4E5F32B18B56500507B9C /* OpenSesameTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,6 +98,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		79D4E5F42B18B56500507B9C /* OpenSesameTests */ = {
+			isa = PBXGroup;
+			children = (
+				79D4E5F52B18B56500507B9C /* SesameTests.swift */,
+			);
+			path = OpenSesameTests;
+			sourceTree = "<group>";
+		};
+		79D4E5FD2B18B6CF00507B9C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,9 +129,33 @@
 			dependencies = (
 			);
 			name = OpenSesame;
+			packageProductDependencies = (
+				79D4E5FE2B18B6CF00507B9C /* Sesame */,
+			);
 			productName = OpenSesame;
 			productReference = 795D101D2B17E455009A4C26 /* OpenSesame.app */;
 			productType = "com.apple.product-type.application";
+		};
+		79D4E5F22B18B56500507B9C /* OpenSesameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79D4E5FB2B18B56500507B9C /* Build configuration list for PBXNativeTarget "OpenSesameTests" */;
+			buildPhases = (
+				79D4E5EF2B18B56500507B9C /* Sources */,
+				79D4E5F02B18B56500507B9C /* Frameworks */,
+				79D4E5F12B18B56500507B9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				79D4E5F82B18B56500507B9C /* PBXTargetDependency */,
+			);
+			name = OpenSesameTests;
+			packageProductDependencies = (
+				79D4E6002B18B6D200507B9C /* Sesame */,
+			);
+			productName = OpenSesameTests;
+			productReference = 79D4E5F32B18B56500507B9C /* OpenSesameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -101,6 +169,10 @@
 				TargetAttributes = {
 					795D101C2B17E455009A4C26 = {
 						CreatedOnToolsVersion = 15.0.1;
+					};
+					79D4E5F22B18B56500507B9C = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 795D101C2B17E455009A4C26;
 					};
 				};
 			};
@@ -118,6 +190,7 @@
 			projectRoot = "";
 			targets = (
 				795D101C2B17E455009A4C26 /* OpenSesame */,
+				79D4E5F22B18B56500507B9C /* OpenSesameTests */,
 			);
 		};
 /* End PBXProject section */
@@ -129,6 +202,13 @@
 			files = (
 				795D10282B17E456009A4C26 /* Preview Assets.xcassets in Resources */,
 				795D10252B17E456009A4C26 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79D4E5F12B18B56500507B9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +224,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		79D4E5EF2B18B56500507B9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79D4E5F62B18B56500507B9C /* SesameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		79D4E5F82B18B56500507B9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 795D101C2B17E455009A4C26 /* OpenSesame */;
+			targetProxy = 79D4E5F72B18B56500507B9C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		795D102A2B17E456009A4C26 /* Debug */ = {
@@ -319,6 +415,50 @@
 			};
 			name = Release;
 		};
+		79D4E5F92B18B56500507B9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UZ36E9K8AU;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rashadatjou.OpenSesameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenSesame.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OpenSesame";
+			};
+			name = Debug;
+		};
+		79D4E5FA2B18B56500507B9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UZ36E9K8AU;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rashadatjou.OpenSesameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenSesame.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OpenSesame";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -340,7 +480,27 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		79D4E5FB2B18B56500507B9C /* Build configuration list for PBXNativeTarget "OpenSesameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79D4E5F92B18B56500507B9C /* Debug */,
+				79D4E5FA2B18B56500507B9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		79D4E5FE2B18B6CF00507B9C /* Sesame */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Sesame;
+		};
+		79D4E6002B18B6D200507B9C /* Sesame */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Sesame;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 795D10152B17E455009A4C26 /* Project object */;
 }
