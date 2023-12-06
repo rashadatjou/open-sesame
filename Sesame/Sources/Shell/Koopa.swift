@@ -1,4 +1,4 @@
-// File.swift
+// Koopa.swift
 // OpenSesame by @rashadatjou
 // macOS(13.6) with Swift(5.0)
 // 06/12/2023

@@ -27,5 +27,5 @@ func loadPorts() throws -> [Port] {
     portList.append(port)
   }
 
-  return portList
+  return portList.removingDuplicates(basedOn: \.port)
 }
