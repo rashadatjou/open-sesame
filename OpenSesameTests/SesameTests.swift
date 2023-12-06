@@ -22,4 +22,36 @@ final class SesameTests: XCTestCase {
     let hasDuplicates = onlyPortSet.count != onlyPortList.count
     XCTAssertFalse(hasDuplicates, "Port list contains duplicate ports")
   }
+
+  func testListeningForPorts() throws {
+    let interval: TimeInterval = 2
+    let callbackMax = 5
+    let intervalMax = interval * TimeInterval(callbackMax)
+    let expectation = self.expectation(description: "listeningForPortsTest")
+    var callbackCounter = 0
+    var portCounter = 0
+
+    let listener = Sesame.listeForPorts(every: interval) { result in
+
+      switch result {
+      case .success(let ports):
+        callbackCounter += 1
+        portCounter += ports.count
+        if callbackCounter == callbackMax {
+          expectation.fulfill()
+        }
+      case .failure(let error):
+        XCTFail("The port listenere has failed with an error: \(error.localizedDescription)")
+      }
+    }
+
+    // Wait for the expectations to be fulfilled or timeout
+    wait(for: [expectation], timeout: intervalMax + 0.1)
+
+    // Cancle listener
+    listener()
+
+    // Assert the callback was called 5 times
+    XCTAssertNotEqual(portCounter, 0, "The number of ports listned for was bigger than 0")
+  }
 }

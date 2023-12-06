@@ -3,6 +3,10 @@
 
 import Foundation
 
+// - Types
+typealias PortCallback = (Swift.Result<[Port], SesameError>) -> Void
+typealias EmptyFunction = () -> Void
+
 // - Stored Props
 private var shell: Koopa = {
   let type = "/bin/bash"
@@ -28,4 +32,23 @@ func loadPorts() throws -> [Port] {
   }
 
   return portList.removingDuplicates(basedOn: \.port)
+}
+
+@discardableResult
+func listeForPorts(
+  every interval: TimeInterval,
+  _ completion: @escaping PortCallback
+) -> EmptyFunction {
+  let timer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { _ in
+    do {
+      let portList = try loadPorts()
+      completion(.success(portList))
+    } catch {
+      completion(.failure(error as! SesameError))
+    }
+  }
+
+  return {
+    timer.invalidate()
+  }
 }
