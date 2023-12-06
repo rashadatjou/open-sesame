@@ -15,6 +15,11 @@ final class SesameTests: XCTestCase {
   }
 
   func testLoadNoDuplicatePorts() throws {
-    // TODO: Validate that there are no duplicates
+    let portList = try Sesame.loadPorts()
+    let onlyPortList = portList.map(\.port)
+    let onlyPortSet = Set(onlyPortList)
+
+    let hasDuplicates = onlyPortSet.count != onlyPortList.count
+    XCTAssertFalse(hasDuplicates, "Port list contains duplicate ports")
   }
 }

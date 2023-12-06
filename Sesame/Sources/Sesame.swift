@@ -2,18 +2,21 @@
 // https://docs.swift.org/swift-book
 
 import Foundation
-import ShellKit
 
 // - Stored Props
-private var shell: Shell = {
+private var shell: Koopa = {
   let type = "/bin/bash"
   let env = ["": ""]
-  return Shell(type, env: env)
+  return Koopa(type: type, env: env)
 }()
 
 // - Public API
 func loadPorts() throws -> [Port] {
-  let shellOutput = try shell.run(#"netstat -Watnlv | grep LISTEN | awk '{ split($4, a, /[.*:]/); port = a[length(a)]; if (port ~ /^[0-9]+$/) { "ps -o comm= -p " $9 | getline procname; print "{ \"proto\": \"" $1 "\", \"port\": \"" port "\", \"pid\": \"" $9 "\", \"name\": \"" procname "\" }"; } }'"#)
+  let shellOutput = try shell
+    .pipe("netstat -Watnlv")
+    .pipe("grep LISTEN")
+    .pipe(#"awk '{ split($4, a, /[.*:]/); port = a[length(a)]; if (port ~ /^[0-9]+$/) { "ps -o comm= -p " $9 | getline procname; print "{ \"protocol\": \"" $1 "\", \"port\": \"" port "\", \"pid\": \"" $9 "\", \"name\": \"" procname "\" }"; } }'"#)
+    .run()
 
   let outputList = shellOutput.components(separatedBy: .newlines)
   var portList: [Port] = []
