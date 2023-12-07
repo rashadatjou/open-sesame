@@ -99,12 +99,12 @@
 		795D101F2B17E455009A4C26 /* OpenSesame */ = {
 			isa = PBXGroup;
 			children = (
-				7913692D2B2260D900CED5AD /* View */,
-				7913692A2B225D4100CED5AD /* ViewModel */,
 				795D10292B17E456009A4C26 /* OpenSesame.entitlements */,
 				7994791B2B17E8A1005A4851 /* OpenSesameApp.swift */,
 				795D10242B17E456009A4C26 /* Assets.xcassets */,
 				795D10262B17E456009A4C26 /* Preview Content */,
+				7913692D2B2260D900CED5AD /* View */,
+				7913692A2B225D4100CED5AD /* ViewModel */,
 			);
 			path = OpenSesame;
 			sourceTree = "<group>";

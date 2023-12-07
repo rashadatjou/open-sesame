@@ -54,3 +54,6 @@ public func listenForPorts(
     timer.invalidate()
   }
 }
+
+// TODO: lsappinfo info -only name <PID>
+// TODO: Load name and other info of each port
