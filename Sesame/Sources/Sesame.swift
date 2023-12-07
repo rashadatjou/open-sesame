@@ -4,8 +4,8 @@
 import Foundation
 
 // - Types
-typealias PortCallback = (Swift.Result<[Port], SesameError>) -> Void
-typealias EmptyFunction = () -> Void
+public typealias PortCallback = (Swift.Result<[Port], PortError>) -> Void
+public typealias EmptyFunction = () -> Void
 
 // - Stored Props
 private var shell: Koopa = {
@@ -15,7 +15,7 @@ private var shell: Koopa = {
 }()
 
 // - Public API
-func loadPorts() throws -> [Port] {
+public func loadPorts() throws -> [Port] {
   let shellOutput = try shell
     .pipe("netstat -Watnlv")
     .pipe("grep LISTEN")
@@ -35,7 +35,7 @@ func loadPorts() throws -> [Port] {
 }
 
 @discardableResult
-func listeForPorts(
+public func listenForPorts(
   every interval: TimeInterval,
   _ completion: @escaping PortCallback
 ) -> EmptyFunction {
@@ -43,8 +43,10 @@ func listeForPorts(
     do {
       let portList = try loadPorts()
       completion(.success(portList))
+    } catch let error as PortError {
+      completion(.failure(error))
     } catch {
-      completion(.failure(error as! SesameError))
+      completion(.failure(.failedToLoad))
     }
   }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7913692C2B225D4A00CED5AD /* PortModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913692B2B225D4A00CED5AD /* PortModel.swift */; };
 		795D10232B17E455009A4C26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795D10222B17E455009A4C26 /* ContentView.swift */; };
 		795D10252B17E456009A4C26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 795D10242B17E456009A4C26 /* Assets.xcassets */; };
 		795D10282B17E456009A4C26 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 795D10272B17E456009A4C26 /* Preview Assets.xcassets */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7913692B2B225D4A00CED5AD /* PortModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortModel.swift; sourceTree = "<group>"; };
 		795D101D2B17E455009A4C26 /* OpenSesame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenSesame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		795D10222B17E455009A4C26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		795D10242B17E456009A4C26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,6 +60,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7913692A2B225D4100CED5AD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7913692B2B225D4A00CED5AD /* PortModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7913692D2B2260D900CED5AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				795D10222B17E455009A4C26 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		795D10142B17E455009A4C26 = {
 			isa = PBXGroup;
 			children = (
@@ -81,8 +99,9 @@
 		795D101F2B17E455009A4C26 /* OpenSesame */ = {
 			isa = PBXGroup;
 			children = (
+				7913692D2B2260D900CED5AD /* View */,
+				7913692A2B225D4100CED5AD /* ViewModel */,
 				795D10292B17E456009A4C26 /* OpenSesame.entitlements */,
-				795D10222B17E455009A4C26 /* ContentView.swift */,
 				7994791B2B17E8A1005A4851 /* OpenSesameApp.swift */,
 				795D10242B17E456009A4C26 /* Assets.xcassets */,
 				795D10262B17E456009A4C26 /* Preview Content */,
@@ -221,6 +240,7 @@
 			files = (
 				795D10232B17E455009A4C26 /* ContentView.swift in Sources */,
 				7994791C2B17E8A1005A4851 /* OpenSesameApp.swift in Sources */,
+				7913692C2B225D4A00CED5AD /* PortModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

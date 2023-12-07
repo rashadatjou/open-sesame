@@ -1,10 +1,11 @@
-// SesameError.swift
+// PortError.swift
 // OpenSesame by @rashadatjou
 // macOS(13.6) with Swift(5.0)
 // 04/12/2023
 
 import Foundation
 
-enum SesameError: Swift.Error {
+public enum PortError: Swift.Error {
   case shellNotFound
+  case failedToLoad
 }

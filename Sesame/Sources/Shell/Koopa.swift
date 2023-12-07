@@ -5,7 +5,7 @@
 
 import ShellKit
 
-public final class Koopa {
+final class Koopa {
   // - Props
   let type: String
   let env: [String: String]

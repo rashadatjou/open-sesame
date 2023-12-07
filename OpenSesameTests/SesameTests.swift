@@ -31,7 +31,7 @@ final class SesameTests: XCTestCase {
     var callbackCounter = 0
     var portCounter = 0
 
-    let listener = Sesame.listeForPorts(every: interval) { result in
+    let listener = Sesame.listenForPorts(every: interval) { result in
 
       switch result {
       case .success(let ports):

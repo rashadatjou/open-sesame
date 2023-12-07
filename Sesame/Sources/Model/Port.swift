@@ -5,11 +5,11 @@
 
 import Foundation
 
-struct Port: Equatable, Decodable, Hashable {
-  let name: String
-  let pid: Int
-  let port: Int
-  let `protocol`: String
+public struct Port: Equatable, Decodable, Hashable {
+  public let name: String
+  public let pid: Int
+  public let port: Int
+  public let `protocol`: String
 
   enum CodingKeys: CodingKey {
     case name
@@ -18,7 +18,7 @@ struct Port: Equatable, Decodable, Hashable {
     case `protocol`
   }
 
-  init(from decoder: Decoder) throws {
+  public init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: CodingKeys.self)
     self.name = try container.decode(String.self, forKey: .name)
     self.protocol = try container.decode(String.self, forKey: .protocol)
@@ -30,7 +30,7 @@ struct Port: Equatable, Decodable, Hashable {
     self.pid = Int(stringPid) ?? -1
   }
 
-  static func == (lhs: Self, rhs: Self) -> Bool {
+  public static func == (lhs: Self, rhs: Self) -> Bool {
     lhs.port == rhs.port
   }
 }
