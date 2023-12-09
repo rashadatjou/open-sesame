@@ -34,7 +34,7 @@ struct PortItemView: View {
           .font(.title)
           .frame(maxWidth: .infinity, alignment: .leading)
 
-        Text(port.name.isEmpty ? "Unknown" : port.name)
+        Text("PID: " + String(port.pid))
           .font(.subheadline)
           .foregroundColor(.secondary)
       }

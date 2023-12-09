@@ -35,8 +35,13 @@ extension Koopa {
   }
 
   @discardableResult
-  func run() throws -> String {
+  func execute() throws -> String {
     let formatedCommand = commandList.joined(separator: " | ")
     return try shell.run(formatedCommand)
+  }
+
+  @discardableResult
+  public func run(_ command: String) throws -> String {
+    return try shell.run(command)
   }
 }

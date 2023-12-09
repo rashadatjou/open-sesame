@@ -19,8 +19,8 @@ public func loadPorts() throws -> [Port] {
   let shellOutput = try shell
     .pipe("netstat -Watnlv")
     .pipe("grep LISTEN")
-    .pipe(#"awk '{ split($4, a, /[.*:]/); port = a[length(a)]; if (port ~ /^[0-9]+$/) { "ps -o comm= -p " $9 | getline procname; print "{ \"protocol\": \"" $1 "\", \"port\": \"" port "\", \"pid\": \"" $9 "\", \"name\": \"" procname "\" }"; } }'"#)
-    .run()
+    .pipe(#"awk '{ split($4, a, /[.*:]/); port = a[length(a)]; if (port ~ /^[0-9]+$/) { "ps -o comm= -p " $9 | getline procname; print "{ \"protocol\": \"" $1 "\", \"port\": \"" port "\", \"pid\": \"" $9 "\" }"; } }'"#)
+    .execute()
 
   let outputList = shellOutput.components(separatedBy: .newlines)
   var portList: [Port] = []
@@ -55,5 +55,23 @@ public func listenForPorts(
   }
 }
 
-// TODO: lsappinfo info -only name <PID>
-// TODO: Load name and other info of each port
+public func loadApp(for port: Port) throws -> App? {
+  let lsappinfoKeys = [
+    "name",
+    "asn",
+    "bundleid",
+    "bundlepath",
+    "executablepath",
+    "applicationtype",
+    "version",
+    "filecreator",
+    "arch"
+  ]
+
+  for key in lsappinfoKeys {
+    let value = try shell.run("lsappinfo info -only \(key) \(port.pid)")
+    print(value)
+  }
+
+  return nil
+}

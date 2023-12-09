@@ -6,13 +6,11 @@
 import Foundation
 
 public struct Port: Equatable, Decodable, Hashable {
-  public let name: String
   public let pid: Int
   public let port: Int
   public let `protocol`: String
 
   enum CodingKeys: CodingKey {
-    case name
     case pid
     case port
     case `protocol`
@@ -20,7 +18,6 @@ public struct Port: Equatable, Decodable, Hashable {
 
   public init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: CodingKeys.self)
-    self.name = try container.decode(String.self, forKey: .name)
     self.protocol = try container.decode(String.self, forKey: .protocol)
 
     let stringPort = try container.decode(String.self, forKey: .port)
