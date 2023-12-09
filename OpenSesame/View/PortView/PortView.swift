@@ -12,9 +12,19 @@ struct PortView: View {
 
   var body: some View {
     VStack {
-      List(model.openPortList, id: \.port) { port in
-        PortItemView(icon: "network", port: port)
+      NavigationStack {
+        List(model.openPortList, id: \.port) { port in
+          NavigationLink(value: port) {
+            PortItemView(icon: "network", port: port)
+          }
+        }
+        .navigationDestination(for: Sesame.Port.self) { port in
+          PortDetailView(port: port)
+        }
       }
+
+      Spacer()
+
       VStack {
         PlainItemView(
           title: "Settings",

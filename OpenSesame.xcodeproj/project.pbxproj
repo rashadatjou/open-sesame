@@ -15,6 +15,7 @@
 		79D2D38A2B24D37500C0141A /* PortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D2D3892B24D37500C0141A /* PortView.swift */; };
 		79D2D38E2B24D39B00C0141A /* PortItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D2D38D2B24D39B00C0141A /* PortItemView.swift */; };
 		79D2D3902B24D3C000C0141A /* PlainItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D2D38F2B24D3C000C0141A /* PlainItemView.swift */; };
+		79D2D3932B24D57200C0141A /* PortDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D2D3922B24D57200C0141A /* PortDetailView.swift */; };
 		79D4E5F62B18B56500507B9C /* SesameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D4E5F52B18B56500507B9C /* SesameTests.swift */; };
 		79D4E5FF2B18B6CF00507B9C /* Sesame in Frameworks */ = {isa = PBXBuildFile; productRef = 79D4E5FE2B18B6CF00507B9C /* Sesame */; };
 		79D4E6012B18B6D200507B9C /* Sesame in Frameworks */ = {isa = PBXBuildFile; productRef = 79D4E6002B18B6D200507B9C /* Sesame */; };
@@ -41,6 +42,7 @@
 		79D2D3892B24D37500C0141A /* PortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortView.swift; sourceTree = "<group>"; };
 		79D2D38D2B24D39B00C0141A /* PortItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortItemView.swift; sourceTree = "<group>"; };
 		79D2D38F2B24D3C000C0141A /* PlainItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainItemView.swift; sourceTree = "<group>"; };
+		79D2D3922B24D57200C0141A /* PortDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortDetailView.swift; sourceTree = "<group>"; };
 		79D4E5F32B18B56500507B9C /* OpenSesameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenSesameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79D4E5F52B18B56500507B9C /* SesameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SesameTests.swift; sourceTree = "<group>"; };
 		79D4E5FC2B18B5EA00507B9C /* Sesame */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Sesame; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 		7913692D2B2260D900CED5AD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				79D2D3912B24D56500C0141A /* PortDetailView */,
 				79D2D3872B24D35900C0141A /* PortView */,
 				795D10222B17E455009A4C26 /* ContentView.swift */,
 			);
@@ -132,6 +135,14 @@
 				79D2D38F2B24D3C000C0141A /* PlainItemView.swift */,
 			);
 			path = PortView;
+			sourceTree = "<group>";
+		};
+		79D2D3912B24D56500C0141A /* PortDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				79D2D3922B24D57200C0141A /* PortDetailView.swift */,
+			);
+			path = PortDetailView;
 			sourceTree = "<group>";
 		};
 		79D4E5F42B18B56500507B9C /* OpenSesameTests */ = {
@@ -258,6 +269,7 @@
 				795D10232B17E455009A4C26 /* ContentView.swift in Sources */,
 				79D2D38A2B24D37500C0141A /* PortView.swift in Sources */,
 				79D2D3902B24D3C000C0141A /* PlainItemView.swift in Sources */,
+				79D2D3932B24D57200C0141A /* PortDetailView.swift in Sources */,
 				7994791C2B17E8A1005A4851 /* OpenSesameApp.swift in Sources */,
 				79D2D38E2B24D39B00C0141A /* PortItemView.swift in Sources */,
 				7913692C2B225D4A00CED5AD /* PortModel.swift in Sources */,
