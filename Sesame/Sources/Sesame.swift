@@ -65,13 +65,27 @@ public func loadApp(for port: Port) throws -> App? {
     "applicationtype",
     "version",
     "filecreator",
-    "arch"
+    "arch",
+    "pid"
   ]
 
-  for key in lsappinfoKeys {
-    let value = try shell.run("lsappinfo info -only \(key) \(port.pid)")
-    print(value)
+  let rawDicionary = try lsappinfoKeys.reduce(into: [String: Any]()) { result, key in
+    let value = try shell
+      .pipe("lsappinfo info -only \(key) \(port.pid)")
+      .pipe(#"awk -F'=' '{gsub(/"/, "", $2); print $2}'"#)
+      .execute()
+    return result[key] = value
   }
 
-  return nil
+  guard let rawJSON = try rawDicionary.toJSON(),
+        let data = rawJSON.data(using: .utf8)
+  else {
+    // TODO: Throw error 
+    print("Error parsing output")
+    return nil
+  }
+
+  let app = try JSONDecoder().decode(App.self, from: data)
+
+  return app
 }

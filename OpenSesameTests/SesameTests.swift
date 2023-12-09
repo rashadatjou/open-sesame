@@ -54,4 +54,14 @@ final class SesameTests: XCTestCase {
     // Assert the callback was called 5 times
     XCTAssertNotEqual(portCounter, 0, "The number of ports listned for was bigger than 0")
   }
+
+  func testLoadApp() throws {
+    let port = try Sesame.loadPorts().first(where: { $0.port < 9999 })
+
+    let cleanPort = try XCTUnwrap(port)
+
+    let app = try Sesame.loadApp(for: cleanPort)
+
+    XCTAssertNotNil(app, "App for pid: \(cleanPort.pid) is nil")
+  }
 }

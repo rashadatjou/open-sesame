@@ -5,7 +5,7 @@
 
 import Foundation
 
-public struct App {
+public struct App: Decodable {
   public let name: String
   public let path: String
   public let executablePath: String
@@ -13,10 +13,20 @@ public struct App {
   public let asn: String
   public let pid: String
   public let type: String
-  public let flavor: String
   public let version: String
-  public let fileType: String
   public let creator: String
   public let arch: String
-  public let checkinTime: String
+
+  enum CodingKeys: String, CodingKey {
+    case name
+    case asn
+    case pid
+    case version
+    case arch
+    case path = "bundlepath"
+    case executablePath = "executablepath"
+    case bundleID = "bundleid"
+    case type = "applicationtype"
+    case creator = "filecreator"
+  }
 }
