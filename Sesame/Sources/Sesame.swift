@@ -80,9 +80,7 @@ public func loadApp(for port: Port) throws -> App? {
   guard let rawJSON = try rawDicionary.toJSON(),
         let data = rawJSON.data(using: .utf8)
   else {
-    // TODO: Throw error 
-    print("Error parsing output")
-    return nil
+    throw AppError.invalidAppInfo
   }
 
   let app = try JSONDecoder().decode(App.self, from: data)
