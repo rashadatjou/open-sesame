@@ -64,4 +64,14 @@ final class SesameTests: XCTestCase {
 
     XCTAssertNotNil(app, "App for pid: \(cleanPort.pid) is nil")
   }
+
+  func testLoadingOfCommand() throws {
+    let port = try Sesame.loadPorts().first(where: { $0.port < 9999 })
+
+    let cleanPort = try XCTUnwrap(port)
+
+    let command = try Sesame.loadCommand(for: cleanPort)
+
+    XCTAssertNotNil(command, "Command for pid: \(cleanPort.pid) is nil")
+  }
 }

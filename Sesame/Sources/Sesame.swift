@@ -87,3 +87,25 @@ public func loadApp(for port: Port) throws -> App? {
 
   return app
 }
+
+public func loadCommand(for port: Port) throws -> Command? {
+  let rawOutput = try shell
+    .pipe("ps -p \(port.pid) -o pid=,ppid=,user=,args=")
+    .pipe(#"awk '{print "{\"pid\": "$1", \"ppid\": "$2", \"user\": \""$3"\", \"command\": \""$4"\"}"}'"#)
+    .print()
+    .execute()
+  
+  print(rawOutput)
+
+  guard let data = rawOutput.data(using: .utf8) else {
+    // TODO: Throw error
+    return nil
+  }
+
+  let decoder = JSONDecoder()
+  let command = try decoder.decode(Command.self, from: data)
+  
+  dump(command)
+
+  return command
+}

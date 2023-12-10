@@ -37,6 +37,7 @@ extension Koopa {
   @discardableResult
   func execute() throws -> String {
     let formatedCommand = commandList.joined(separator: " | ")
+    commandList = []
     return try shell.run(formatedCommand)
   }
 
