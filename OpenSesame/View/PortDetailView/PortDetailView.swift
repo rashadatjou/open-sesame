@@ -6,12 +6,63 @@
 import Sesame
 import SwiftUI
 
+// HStack {
+//  Button("Open Localy") {
+//    print("Open in browser")
+//  }
+//  Button("Copy Info") {
+//    print(app.rawJSON)
+//  }
+//  Button("Kill App") {
+//    print("Copy info")
+//  }
+// }
+
 struct ActionView: View {
   var app: Sesame.App
 
   var body: some View {
-    VStack {
-      Text("Add actions here")
+    List {
+      DetailTextView(
+        detailText: "Name",
+        mainText: app.name
+      )
+      DetailTextView(
+        detailText: "Bundle ID",
+        mainText: app.bundleID
+      )
+      DetailTextView(
+        detailText: "Bundle Path",
+        mainText: app.path
+      )
+      DetailTextView(
+        detailText: "Executable Path",
+        mainText: app.executablePath
+      )
+      DetailTextView(
+        detailText: "ASN ID",
+        mainText: app.asn
+      )
+      DetailTextView(
+        detailText: "Creator",
+        mainText: app.creator
+      )
+      DetailTextView(
+        detailText: "PID",
+        mainText: app.pid
+      )
+      DetailTextView(
+        detailText: "Architecture",
+        mainText: app.arch
+      )
+      DetailTextView(
+        detailText: "Type",
+        mainText: app.type
+      )
+      DetailTextView(
+        detailText: "Version",
+        mainText: app.version
+      )
     }
   }
 }
@@ -39,11 +90,7 @@ struct PortDetailView: View {
 
   // - Property Modifiers
   private var navigationTitle: String {
-    if let app {
-      return app.name
-    } else {
-      return "Finding app..."
-    }
+    return "Port " + String(port.port)
   }
 
   // - Actions
