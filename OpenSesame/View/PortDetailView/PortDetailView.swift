@@ -55,6 +55,16 @@ struct ProcessStatusDataList: View {
         detailText: "Path",
         mainText: processStatus.command
       )
+
+      CopiableTextView(
+        detailText: "PID",
+        mainText: String(processStatus.pid)
+      )
+
+      CopiableTextView(
+        detailText: "PPID",
+        mainText: String(processStatus.ppid)
+      )
     }
   }
 }
