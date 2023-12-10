@@ -1,13 +1,13 @@
-// File.swift
+// ProcessStatus.swift
 // OpenSesame by @rashadatjou
 // macOS(13.6) with Swift(5.0)
 // 10/12/2023
 
 import Foundation
 
-public struct Command: Codable {
-  public let pid: String
-  public let ppid: String
+public struct ProcessStatus: Codable {
+  public let pid: Int
+  public let ppid: Int
   public let user: String
   public let command: String
 }
