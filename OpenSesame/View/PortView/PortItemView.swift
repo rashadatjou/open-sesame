@@ -32,6 +32,7 @@ struct PortItemView: View {
       VStack(alignment: .leading) {
         Text(String(port.port))
           .font(.title)
+          .fontWeight(.semibold)
           .frame(maxWidth: .infinity, alignment: .leading)
 
         Text("PID: " + String(port.pid))
@@ -57,8 +58,6 @@ struct PortItemView: View {
 
   private var background: some View {
     RoundedRectangle(cornerRadius: 8)
-      .fill(
-        Color.gray.opacity(0.2)
-      )
+      .fill(Material.ultraThick)
   }
 }

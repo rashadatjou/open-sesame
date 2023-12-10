@@ -24,7 +24,7 @@ struct PlainItemView: View {
     }
     .padding(6)
     .frame(maxWidth: .infinity, alignment: .leading)
-    .background(isSelected ? Color.white.opacity(0.2) : Color.clear)
+    .background(isSelected ? Material.thin : Material.thick)
     .foregroundColor(isSelected ? .white : .primary)
     .cornerRadius(10)
     .overlay(

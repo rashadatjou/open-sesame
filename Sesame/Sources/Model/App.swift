@@ -5,7 +5,7 @@
 
 import Foundation
 
-public struct App: Decodable {
+public struct App: Codable {
   public let name: String
   public let path: String
   public let executablePath: String
@@ -28,5 +28,15 @@ public struct App: Decodable {
     case bundleID = "bundleid"
     case type = "applicationtype"
     case creator = "filecreator"
+  }
+
+  public var rawJSON: String? {
+    do {
+      let encoder = JSONEncoder()
+      let data = try encoder.encode(self)
+      return String(data: data, encoding: .utf8)
+    } catch {
+      return nil
+    }
   }
 }
