@@ -9,7 +9,7 @@ import SwiftUI
 
 struct QuickActions: View {
   // - Props
-  var app: Sesame.App
+  var rawData: String?
   var port: Sesame.Port
 
   // - Environment
@@ -27,7 +27,7 @@ struct QuickActions: View {
         openURL(url)
       }
       Button("Copy All") {
-        guard let json = app.rawJSON else {
+        guard let json = rawData else {
           // TODO: Show warning
           return
         }
@@ -38,6 +38,24 @@ struct QuickActions: View {
       }
     }
     .padding(.bottom, 8)
+  }
+}
+
+struct ProcessStatusDataList: View {
+  // - Props
+  var processStatus: Sesame.ProcessStatus
+
+  var body: some View {
+    List {
+      CopiableTextView(
+        detailText: "User",
+        mainText: processStatus.user
+      )
+      CopiableTextView(
+        detailText: "Path",
+        mainText: processStatus.command
+      )
+    }
   }
 }
 
@@ -98,17 +116,27 @@ struct PortDetailView: View {
   @State
   private var app: Sesame.App?
 
+  @State
+  private var processStatus: Sesame.ProcessStatus?
+
   var body: some View {
     VStack {
+      if app == nil && processStatus == nil {
+        ProgressView("Looking...")
+      }
+
       if let app {
         AppDataList(app: app)
-        QuickActions(app: app, port: port)
-      } else {
-        ProgressView()
+        QuickActions(rawData: app.rawJSON, port: port)
+      }
+
+      if let processStatus {
+        ProcessStatusDataList(processStatus: processStatus)
+        QuickActions(rawData: processStatus.rawJSON, port: port)
       }
     }
     .navigationTitle(navigationTitle)
-    .task(priority: .high, loadApp)
+    .task(priority: .high, loadInfo)
     .frame(maxHeight: .infinity)
   }
 
@@ -119,11 +147,19 @@ struct PortDetailView: View {
 
   // - Actions
   @Sendable
-  private func loadApp() {
+  private func loadInfo() {
     do {
       app = try Sesame.loadApp(for: port)
     } catch {
       Swift.print("Error while loading app.", error)
+    }
+
+    guard app == nil else { return } // if app has failed
+
+    do {
+      processStatus = try Sesame.loadProcessStatus(for: port)
+    } catch {
+      Swift.print("Error while process status.", error)
     }
   }
 }

@@ -84,4 +84,9 @@ final class SesameTests: XCTestCase {
 
     XCTAssertNotNil(runningApp, "NSRunningApplication for pid: \(cleanPort.pid) is nil")
   }
+
+  func testIsInSandbox() throws {
+    let isSandbox = Sesame.isAppSandboxed()
+    XCTAssert(isSandbox == true)
+  }
 }

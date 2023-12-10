@@ -10,4 +10,14 @@ public struct ProcessStatus: Codable {
   public let ppid: Int
   public let user: String
   public let command: String
+  
+  public var rawJSON: String? {
+    do {
+      let encoder = JSONEncoder()
+      let data = try encoder.encode(self)
+      return String(data: data, encoding: .utf8)
+    } catch {
+      return nil
+    }
+  }
 }
