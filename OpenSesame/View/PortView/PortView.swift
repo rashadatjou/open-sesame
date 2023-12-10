@@ -21,21 +21,21 @@ struct PortView: View {
         .navigationDestination(for: Sesame.Port.self) { port in
           PortDetailView(port: port)
         }
-      }
 
-      Spacer()
+        Spacer()
 
-      VStack {
-        PlainItemView(
-          title: "Settings",
-          shortcut: "⌘ ,"
-        )
-        PlainItemView(
-          title: "Quit",
-          shortcut: "⌘Q"
-        )
+        VStack {
+          PlainItemView(
+            title: "Settings",
+            shortcut: "⌘ ,"
+          )
+          PlainItemView(
+            title: "Quit",
+            shortcut: "⌘Q"
+          )
+        }
+        .padding([.bottom, .horizontal], 6)
       }
-      .padding([.bottom, .horizontal], 6)
     }
     .frame(width: 260, height: 300)
     .onAppear {
