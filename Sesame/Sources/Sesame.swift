@@ -1,6 +1,7 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
 
+import AppKit
 import Foundation
 
 // - Types
@@ -85,6 +86,10 @@ public func loadApp(for port: Port) throws -> App? {
 
   let app = try JSONDecoder().decode(App.self, from: data)
 
+  if app.name.contains("[ NULL ]") {
+    throw AppError.emptyApp
+  }
+
   return app
 }
 
@@ -103,4 +108,38 @@ public func loadProcessStatus(for port: Port) throws -> ProcessStatus? {
   let processStatus = try decoder.decode(ProcessStatus.self, from: data)
 
   return processStatus
+}
+
+public func loadRunningApplication(for port: Port) -> App? {
+  guard let runningApp = NSRunningApplication(processIdentifier: pid_t(port.pid)) else {
+    // TODO: Throw error
+    return nil
+  }
+
+  guard let localizedName = runningApp.localizedName,
+        let path = runningApp.bundleURL?.absoluteString
+  else {
+    // TODO: Throw error
+    return nil
+  }
+
+  let app = App(
+    name: localizedName,
+    path: path,
+    executablePath: runningApp.executableURL?.absoluteString ?? "",
+    bundleID: runningApp.bundleIdentifier ?? "",
+    asn: "",
+    pid: String(port.pid),
+    type: "",
+    version: "",
+    creator: "",
+    arch: ""
+  )
+
+  return app
+}
+
+func isAppSandboxed() -> Bool {
+  let homeDirectory = NSHomeDirectory()
+  return homeDirectory.contains("/Library/Containers/")
 }

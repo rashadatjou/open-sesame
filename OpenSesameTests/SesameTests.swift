@@ -74,4 +74,14 @@ final class SesameTests: XCTestCase {
 
     XCTAssertNotNil(ps, "ProcessStatus for pid: \(cleanPort.pid) is nil")
   }
+
+  func testLoadingOfRunningApplication() throws {
+    let port = try Sesame.loadPorts().first(where: { $0.port <= 9999 })
+
+    let cleanPort = try XCTUnwrap(port)
+
+    let runningApp = Sesame.loadRunningApplication(for: cleanPort)
+
+    XCTAssertNotNil(runningApp, "NSRunningApplication for pid: \(cleanPort.pid) is nil")
+  }
 }
