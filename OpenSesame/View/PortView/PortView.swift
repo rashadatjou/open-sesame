@@ -28,11 +28,15 @@ struct PortView: View {
         VStack {
           PlainItemView(
             title: "Settings",
-            shortcut: "⌘ ,"
+            shortcut: "⌘ ,",
+            action: {}
           )
           PlainItemView(
             title: "Quit",
-            shortcut: "⌘Q"
+            shortcut: "⌘Q",
+            action: {
+              exit(0)
+            }
           )
         }
         .padding([.bottom, .horizontal], 6)
