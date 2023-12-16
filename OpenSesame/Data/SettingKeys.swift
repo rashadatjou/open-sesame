@@ -7,5 +7,5 @@ import Foundation
 
 enum SettingKeys: String {
   case only4DigitPorts
-  
+  case excludePortText
 }

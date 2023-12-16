@@ -19,4 +19,11 @@ class SettingModel: ObservableObject {
       objectWillChange.send()
     }
   }
+  
+  @AppStorage(SettingKeys.excludePortText.rawValue)
+  private(set) var excludePortText: String = "" {
+    didSet {
+      objectWillChange.send()
+    }
+  }
 }
