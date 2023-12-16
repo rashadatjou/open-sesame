@@ -19,9 +19,14 @@ class PortModel: ObservableObject {
 // MARK: - API
 
 extension PortModel {
-  func load() throws {
-    let loadedListOfPorts = try Sesame.loadPorts()
-    openPortList = loadedListOfPorts
+  func load() {
+    do {
+      let loadedListOfPorts = try Sesame.loadPorts()
+      openPortList = loadedListOfPorts
+    } catch {
+      // TODO: Send error upstream
+      print("loadingPortsFailed:", error)
+    }
   }
 
   func listen(interval: TimeInterval) {
@@ -31,7 +36,7 @@ extension PortModel {
         self.openPortList = loadedPortList
       case .failure(let error):
         // TODO: Send error upstream
-        print("loadingPortsFailed:", error)
+        print("listeningPortsFailed:", error)
       }
     }
   }

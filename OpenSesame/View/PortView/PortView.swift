@@ -10,6 +10,9 @@ struct PortView: View {
   @StateObject
   private var model = PortModel()
 
+  @StateObject
+  private var settings = SettingModel.shared
+
   @Environment(\.openSettings)
   private var openSettings
 
@@ -49,11 +52,8 @@ struct PortView: View {
     }
     .frame(width: 260, height: 300)
     .onAppear {
-      do {
-        try model.load()
-      } catch {
-        print("Loading of the model failed")
-      }
+      model.load()
+      model.listen(interval: 10)
     }
   }
 }

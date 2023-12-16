@@ -19,11 +19,21 @@ class SettingModel: ObservableObject {
       objectWillChange.send()
     }
   }
-  
+
   @AppStorage(SettingKeys.excludePortText.rawValue)
   private(set) var excludePortText: String = "" {
     didSet {
       objectWillChange.send()
     }
+  }
+
+  // - Props
+  var excludedPortList: [Int] {
+    let clean = excludePortText
+      .split(separator: ",")
+      .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+      .compactMap { Int($0) }
+
+    return clean
   }
 }
