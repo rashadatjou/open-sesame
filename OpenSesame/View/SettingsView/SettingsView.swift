@@ -36,7 +36,7 @@ struct SettingsView: View {
     HStack {
       Label(
         "Remove ports above \(formatter.string(from: 10_000)!)",
-        systemImage: "slider.vertical.3"
+        systemImage: "eye.slash.circle.fill"
       )
       Spacer()
       Toggle(

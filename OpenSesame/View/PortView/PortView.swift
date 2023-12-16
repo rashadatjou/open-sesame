@@ -53,7 +53,7 @@ struct PortView: View {
     .frame(width: 260, height: 300)
     .onAppear {
       model.load()
-      model.listen(interval: 10)
+      model.listen(interval: settings.refreshInterval)
     }
   }
 }
