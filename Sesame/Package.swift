@@ -6,16 +6,21 @@ let package = Package(
   name: "Sesame",
   defaultLocalization: "en",
   platforms: [
-    .macOS(.v10_15),
+    .macOS(.v11),
   ],
   products: [
     .library(
       name: "Sesame",
       targets: ["Sesame"]
     ),
+    .library(
+      name: "AppDependencies",
+      targets: ["AppDependencies"]
+    ),
   ],
   dependencies: [
     .package(url: "https://github.com/binarybirds/shell-kit", from: "1.0.0"),
+    .package(url: "https://github.com/orchetect/SettingsAccess", from: "1.4.0"),
   ],
   targets: [
     .target(
@@ -24,6 +29,13 @@ let package = Package(
         .product(name: "ShellKit", package: "shell-kit"),
       ],
       path: "./Sources"
+    ),
+    .target(
+      name: "AppDependencies",
+      dependencies: [
+        .product(name: "SettingsAccess", package: "SettingsAccess"),
+      ],
+      path: "./Other"
     ),
   ]
 )

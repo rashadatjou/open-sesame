@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7913692C2B225D4A00CED5AD /* PortModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7913692B2B225D4A00CED5AD /* PortModel.swift */; };
 		7917296C2B25FD7F0044DF0D /* CopiableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7917296B2B25FD7F0044DF0D /* CopiableTextView.swift */; };
+		7921B38A2B2DF916008ACB3A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7921B3892B2DF916008ACB3A /* SettingsView.swift */; };
+		7921B38E2B2DFB3E008ACB3A /* AppDependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 7921B38D2B2DFB3E008ACB3A /* AppDependencies */; };
 		795D10232B17E455009A4C26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795D10222B17E455009A4C26 /* ContentView.swift */; };
 		795D10252B17E456009A4C26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 795D10242B17E456009A4C26 /* Assets.xcassets */; };
 		795D10282B17E456009A4C26 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 795D10272B17E456009A4C26 /* Preview Assets.xcassets */; };
@@ -35,6 +37,7 @@
 /* Begin PBXFileReference section */
 		7913692B2B225D4A00CED5AD /* PortModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortModel.swift; sourceTree = "<group>"; };
 		7917296B2B25FD7F0044DF0D /* CopiableTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopiableTextView.swift; sourceTree = "<group>"; };
+		7921B3892B2DF916008ACB3A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		795D101D2B17E455009A4C26 /* OpenSesame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenSesame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		795D10222B17E455009A4C26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		795D10242B17E456009A4C26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79D4E5FF2B18B6CF00507B9C /* Sesame in Frameworks */,
+				7921B38E2B2DFB3E008ACB3A /* AppDependencies in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,11 +85,20 @@
 		7913692D2B2260D900CED5AD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7921B3882B2DF906008ACB3A /* SettingsView */,
 				79D2D3912B24D56500C0141A /* PortDetailView */,
 				79D2D3872B24D35900C0141A /* PortView */,
 				795D10222B17E455009A4C26 /* ContentView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		7921B3882B2DF906008ACB3A /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				7921B3892B2DF916008ACB3A /* SettingsView.swift */,
+			);
+			path = SettingsView;
 			sourceTree = "<group>";
 		};
 		795D10142B17E455009A4C26 = {
@@ -181,6 +194,7 @@
 			name = OpenSesame;
 			packageProductDependencies = (
 				79D4E5FE2B18B6CF00507B9C /* Sesame */,
+				7921B38D2B2DFB3E008ACB3A /* AppDependencies */,
 			);
 			productName = OpenSesame;
 			productReference = 795D101D2B17E455009A4C26 /* OpenSesame.app */;
@@ -272,6 +286,7 @@
 				795D10232B17E455009A4C26 /* ContentView.swift in Sources */,
 				79D2D38A2B24D37500C0141A /* PortView.swift in Sources */,
 				7917296C2B25FD7F0044DF0D /* CopiableTextView.swift in Sources */,
+				7921B38A2B2DF916008ACB3A /* SettingsView.swift in Sources */,
 				79D2D3902B24D3C000C0141A /* PlainItemView.swift in Sources */,
 				79D2D3932B24D57200C0141A /* PortDetailView.swift in Sources */,
 				7994791C2B17E8A1005A4851 /* OpenSesameApp.swift in Sources */,
@@ -548,6 +563,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7921B38D2B2DFB3E008ACB3A /* AppDependencies */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppDependencies;
+		};
 		79D4E5FE2B18B6CF00507B9C /* Sesame */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Sesame;

@@ -10,6 +10,9 @@ struct PortView: View {
   @StateObject
   private var model = PortModel()
 
+  @Environment(\.openSettings)
+  private var openSettings
+
   var body: some View {
     VStack {
       NavigationStack {
@@ -29,7 +32,9 @@ struct PortView: View {
           PlainItemView(
             title: "Settings",
             shortcut: "⌘ ,",
-            action: {}
+            action: {
+              try? openSettings()
+            }
           )
           PlainItemView(
             title: "Quit",

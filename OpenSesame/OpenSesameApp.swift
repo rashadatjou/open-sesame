@@ -4,6 +4,7 @@
 // 29/11/2023
 
 import SwiftUI
+import SettingsAccess
 
 @main
 struct OpenSesameApp: App {
@@ -13,7 +14,12 @@ struct OpenSesameApp: App {
       systemImage: "circle.circle.fill"
     ) {
       ContentView()
+        .openSettingsAccess()
     }
     .menuBarExtraStyle(.window)
+
+    Settings {
+      SettingsView()
+    }
   }
 }
