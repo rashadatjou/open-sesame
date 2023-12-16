@@ -83,7 +83,7 @@ struct SettingsView: View {
         systemImage: "arrow.rectanglepath"
       )
       Picker("", selection: model.$refreshInterval) {
-        ForEach(model.refreshIntervalList, id: \.self) { option in
+        ForEach(SettingModel.refreshIntervalList, id: \.self) { option in
           Text(String(option)).tag(option)
         }
       }

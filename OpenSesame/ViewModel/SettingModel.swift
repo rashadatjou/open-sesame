@@ -6,11 +6,40 @@
 import SwiftUI
 
 class SettingModel: ObservableObject {
-  // - Instance Props
+  // - Type Props
   static let shared = SettingModel()
+
+  static let refreshIntervalList: [TimeInterval] = [
+    1,
+    2,
+    5,
+    10,
+    15,
+    20,
+    30,
+    60,
+    120,
+    180,
+    240,
+    300,
+    600,
+    900,
+    1800,
+    3600
+  ]
 
   // - Lifecycle
   private init() {}
+
+  // - Computed
+  var excludedPortList: [Int] {
+    let clean = excludePortText
+      .split(separator: ",")
+      .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+      .compactMap { Int($0) }
+
+    return clean
+  }
 
   // - State
   @AppStorage(SettingKeys.only4DigitPorts.rawValue)
@@ -33,33 +62,4 @@ class SettingModel: ObservableObject {
       objectWillChange.send()
     }
   }
-
-  // - Props
-  var excludedPortList: [Int] {
-    let clean = excludePortText
-      .split(separator: ",")
-      .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
-      .compactMap { Int($0) }
-
-    return clean
-  }
-
-  let refreshIntervalList: [TimeInterval] = [
-    1,
-    2,
-    5,
-    10,
-    15,
-    20,
-    30,
-    60,
-    120,
-    180,
-    240,
-    300,
-    600,
-    900,
-    1800,
-    3600
-  ]
 }
