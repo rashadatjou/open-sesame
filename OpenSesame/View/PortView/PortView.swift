@@ -3,6 +3,7 @@
 // macOS(13.6) with Swift(5.0)
 // 09/12/2023
 
+import Combine
 import Sesame
 import SwiftUI
 
@@ -33,6 +34,7 @@ struct PortView: View {
     return list
   }
 
+  // - Body
   var body: some View {
     NavigationStack {
       VStack(alignment: .center) {
@@ -83,5 +85,9 @@ struct PortView: View {
       model.load()
       model.listen(interval: settings.refreshInterval)
     }
+    .onChange(of: settings.refreshInterval, perform: { value in
+      model.abortListening()
+      model.listen(interval: value)
+    })
   }
 }

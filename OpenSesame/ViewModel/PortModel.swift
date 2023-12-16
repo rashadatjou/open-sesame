@@ -10,7 +10,13 @@ import SwiftUI
 class PortModel: ObservableObject {
   // - Public Props
   @Published
-  private(set) var openPortList: [Sesame.Port] = []
+  private(set) var openPortList: [Sesame.Port] = [] {
+    didSet {
+      Swift.print("Loaded new ports")
+    }
+  }
+  
+  private(set) var listeningInterval: TimeInterval = .zero
 
   // - Private Props
   private var portCancel: Sesame.EmptyFunction?
@@ -30,7 +36,10 @@ extension PortModel {
   }
 
   func listen(interval: TimeInterval) {
+    listeningInterval = interval
     portCancel = Sesame.listenForPorts(every: interval) { result in
+      print("New ports fetched!")
+      
       switch result {
       case .success(let loadedPortList):
         self.openPortList = loadedPortList
