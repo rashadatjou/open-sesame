@@ -87,7 +87,7 @@ public func loadApp(for port: Port) throws -> App? {
   let app = try JSONDecoder().decode(App.self, from: data)
 
   if app.name.contains("[ NULL ]") {
-    throw AppError.emptyApp
+    throw AppError.notFound
   }
 
   return app

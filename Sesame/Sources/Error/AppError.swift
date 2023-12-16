@@ -7,5 +7,5 @@ import Foundation
 
 enum AppError: Swift.Error {
   case invalidAppInfo
-  case emptyApp
+  case notFound
 }
