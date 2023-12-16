@@ -22,6 +22,7 @@ struct PortView: View {
         List(model.openPortList, id: \.port) { port in
           NavigationLink(value: port) {
             PortItemView(icon: "network", port: port)
+              .shadow(color: .gray, radius: 2)
           }
           .listRowSeparator(.hidden)
         }
