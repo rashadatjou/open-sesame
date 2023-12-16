@@ -34,17 +34,27 @@ struct PortView: View {
   }
 
   var body: some View {
-    VStack {
-      NavigationStack {
-        List(dataSource, id: \.port) { port in
-          NavigationLink(value: port) {
-            PortItemView(icon: "network", port: port)
-              .shadow(color: .gray, radius: 2)
+    NavigationStack {
+      VStack(alignment: .center) {
+        if dataSource.isEmpty {
+          Spacer()
+
+          Text("Sesame is closed.")
+            .font(.title)
+            .fontWeight(.semibold)
+            .padding()
+
+        } else {
+          List(dataSource, id: \.port) { port in
+            NavigationLink(value: port) {
+              PortItemView(icon: "network", port: port)
+                .shadow(color: .gray, radius: 2)
+            }
+            .listRowSeparator(.hidden)
           }
-          .listRowSeparator(.hidden)
-        }
-        .navigationDestination(for: Sesame.Port.self) { port in
-          PortDetailView(port: port)
+          .navigationDestination(for: Sesame.Port.self) { port in
+            PortDetailView(port: port)
+          }
         }
 
         Spacer()
