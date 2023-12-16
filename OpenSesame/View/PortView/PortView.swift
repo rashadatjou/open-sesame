@@ -16,10 +16,27 @@ struct PortView: View {
   @Environment(\.openSettings)
   private var openSettings
 
+  // - Props
+  private var dataSource: [Sesame.Port] {
+    var list = model.openPortList
+
+    if settings.hidePortsAbove4Digits {
+      list.removeAll(where: { $0.port > 9999 })
+    }
+
+    if !settings.excludePortText.isEmpty {
+      list.removeAll(where:
+        { settings.excludedPortList.contains($0.port) }
+      )
+    }
+
+    return list
+  }
+
   var body: some View {
     VStack {
       NavigationStack {
-        List(model.openPortList, id: \.port) { port in
+        List(dataSource, id: \.port) { port in
           NavigationLink(value: port) {
             PortItemView(icon: "network", port: port)
               .shadow(color: .gray, radius: 2)
