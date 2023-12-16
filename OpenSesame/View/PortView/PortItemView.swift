@@ -24,7 +24,6 @@ struct PortItemView: View {
         Image(systemName: icon)
           .imageScale(.large)
           .fontWeight(.bold)
-          .foregroundColor(.white)
       }
 
       Spacer()
@@ -44,20 +43,21 @@ struct PortItemView: View {
 
       if isSelected {
         Image(systemName: "chevron.right")
-          .foregroundColor(.white)
+          .foregroundColor(.accentColor)
+          .fontWeight(.bold)
           .padding(.leading, 8)
       }
     }
     .padding(.horizontal, 10)
     .padding(.vertical, 6)
-    .background(background)
+    .background(Material.ultraThickMaterial)
+    .clipShape(clipShape)
     .onHover(perform: { hovering in
       isSelected = hovering
     })
   }
 
-  private var background: some View {
+  private var clipShape: some Shape {
     RoundedRectangle(cornerRadius: 8)
-      .fill(Material.ultraThick)
   }
 }

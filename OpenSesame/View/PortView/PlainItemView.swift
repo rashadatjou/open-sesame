@@ -27,18 +27,9 @@ struct PlainItemView: View {
       .padding(6)
       .frame(maxWidth: .infinity, alignment: .leading)
       .background(isSelected ? Material.thin : Material.thick)
-      .foregroundColor(isSelected ? .white : .primary)
-      .cornerRadius(10)
-      .overlay(
-        RoundedRectangle(cornerRadius: 8)
-          .stroke(
-            Color.gray.opacity(0.5),
-            lineWidth: isSelected ? 0.5 : 1
-          )
-      )
-      .onHover(perform: { isHovering in
-        isSelected = isHovering
-      })
+      .foregroundColor(isSelected ? .accentColor : .primary)
+      .clipShape(RoundedRectangle(cornerRadius: 8))
+      .onHover(perform: { isSelected = $0 })
     }
     .buttonStyle(.plain)
   }
