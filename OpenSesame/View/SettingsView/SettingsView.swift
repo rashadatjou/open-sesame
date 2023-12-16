@@ -22,6 +22,8 @@ struct SettingsView: View {
         fieldDisablePorts
         Spacer(minLength: 8)
         fieldExcludePorts
+        Spacer(minLength: 10)
+        fieldRefreshInterval
       }
     }
     .frame(width: 350, height: 250)
@@ -71,6 +73,22 @@ struct SettingsView: View {
 
       Text("Separate each port by comma or a new line.")
         .font(.footnote)
+    }
+  }
+
+  private var fieldRefreshInterval: some View {
+    VStack(alignment: .leading) {
+      Label(
+        "Refresh interval (seconds)",
+        systemImage: "arrow.rectanglepath"
+      )
+      Picker("", selection: model.$refreshInterval) {
+        ForEach(model.refreshIntervalList, id: \.self) { option in
+          Text(String(option)).tag(option)
+        }
+      }
+      .pickerStyle(.menu)
+      .padding(.horizontal, -8)
     }
   }
 }
