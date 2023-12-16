@@ -35,7 +35,7 @@ struct SettingsView: View {
   private var fieldDisablePorts: some View {
     HStack {
       Label(
-        "Remove ports above \(formatter.string(from: 10_000)!)",
+        "Hide ports above \(formatter.string(from: 10_000)!)",
         systemImage: "eye.slash.circle.fill"
       )
       Spacer()
