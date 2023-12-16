@@ -30,8 +30,11 @@ struct PlainItemView: View {
       .foregroundColor(isSelected ? .white : .primary)
       .cornerRadius(10)
       .overlay(
-        RoundedRectangle(cornerRadius: 10)
-          .stroke(Color.gray.opacity(0.5), lineWidth: isSelected ? 0 : 1)
+        RoundedRectangle(cornerRadius: 8)
+          .stroke(
+            Color.gray.opacity(0.5),
+            lineWidth: isSelected ? 0.5 : 1
+          )
       )
       .onHover(perform: { isHovering in
         isSelected = isHovering
