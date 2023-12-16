@@ -44,7 +44,7 @@ class SettingModel: ObservableObject {
     return clean
   }
 
-  var refreshIntervalList: [TimeInterval] = [
+  let refreshIntervalList: [TimeInterval] = [
     1,
     2,
     5,
