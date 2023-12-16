@@ -17,6 +17,7 @@ struct PortView: View {
           NavigationLink(value: port) {
             PortItemView(icon: "network", port: port)
           }
+          .listRowSeparator(.hidden)
         }
         .navigationDestination(for: Sesame.Port.self) { port in
           PortDetailView(port: port)
