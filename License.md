@@ -2,7 +2,7 @@
 
 **1. Grant of License:** This EULA grants you, the user, a non-transferable, non-exclusive license to use OpenSesame (the "Software"), free of charge, on any macOS device that you own or control. This license is for the sole purpose of enabling you to use and enjoy the benefit of the Software as provided by [Your Company Name], in the manner permitted by this EULA.
 
-**2. Restrictions:** You may not distribute, sell, lease, rent, lend, or sublicense the Software to anyone. You may not modify, decompile, reverse engineer, disassemble, attempt to derive the source code of, or create derivative works of the Software, any updates, or any part thereof (except as and only to the extent any foregoing restriction is prohibited by applicable law or to the extent as may be permitted by the licensing terms governing use of any open sourced components included with the Software).
+**2. Restrictions:** You may not distribute, sell, lease, rent, lend, or sublicense the Software to anyone. (except as and only to the extent any foregoing restriction is prohibited by applicable law or to the extent as may be permitted by the licensing terms governing use of any open sourced components included with the Software).
 
 **3. Intellectual Property Rights:** The Software and all worldwide intellectual property rights therein, are the exclusive property of Mehdi Rashadatjou. All rights in and to the Software not expressly granted to you in this EULA are reserved by Mehdi Rashadatjou.
 

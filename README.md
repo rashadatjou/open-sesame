@@ -18,7 +18,7 @@ OpenSesame is a macOS menu bar application designed to enhance your network secu
 
 ## Installation
 
-1. Download the latests `.dmg` from [here](https://link.com)
+1. Download the latests `.dmg` from [here](https://github.com/rashadatjou/open-sesame/releases/download/1.0.1/OpenSesame-1.0.1.dmg)
 2. Open the `.dmg`
 3. Drag and drop `OpenSesame.app` to `/Applications`
 4. Open `OpenSesame.app`
