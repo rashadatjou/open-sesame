@@ -52,6 +52,5 @@ extension PortModel {
 
   func abortListening() {
     portCancel?()
-    openPortList = []
   }
 }
