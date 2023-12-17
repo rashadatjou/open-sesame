@@ -64,14 +64,14 @@ struct PortView: View {
         VStack {
           PlainItemView(
             title: "Settings",
-            shortcut: "⌘ ,",
+            shortcut: "",
             action: {
               try? openSettings()
             }
           )
           PlainItemView(
             title: "Quit",
-            shortcut: "⌘Q",
+            shortcut: "",
             action: {
               exit(0)
             }
