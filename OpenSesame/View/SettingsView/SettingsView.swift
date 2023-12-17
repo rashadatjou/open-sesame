@@ -3,6 +3,7 @@
 // macOS(14.2) with Swift(5.0)
 // 16/12/2023
 
+import LaunchAtLogin
 import SwiftUI
 
 struct SettingsView: View {
@@ -19,14 +20,20 @@ struct SettingsView: View {
   var body: some View {
     Form {
       VStack(alignment: .leading) {
-        fieldDisablePorts
-        Spacer(minLength: 8)
-        fieldExcludePorts
-        Spacer(minLength: 10)
-        fieldRefreshInterval
+        GroupBox("Filters") {
+          fieldDisablePorts
+          Spacer(minLength: 8)
+          fieldExcludePorts
+          Spacer(minLength: 8)
+          fieldRefreshInterval
+        }
+
+        GroupBox("Other") {
+          fieldLaunchAtLogin
+        }
       }
     }
-    .frame(width: 350, height: 250)
+    .frame(width: 350, height: 280)
     .padding(20)
     .navigationTitle("Settings")
   }
@@ -82,13 +89,26 @@ struct SettingsView: View {
         "Refresh interval (seconds)",
         systemImage: "arrow.rectanglepath"
       )
+      
       Picker("", selection: model.$refreshInterval) {
         ForEach(SettingModel.refreshIntervalList, id: \.self) { option in
           Text(String(option)).tag(option)
         }
       }
       .pickerStyle(.menu)
-      .padding(.horizontal, -8)
+      .padding(.leading, -8)
+      .padding(.bottom, 4)
+    }
+  }
+
+  private var fieldLaunchAtLogin: some View {
+    HStack {
+      Label(
+        "Launch at login",
+        systemImage: "person.badge.shield.checkmark.fill"
+      )
+      Spacer()
+      LaunchAtLogin.Toggle {}
     }
   }
 }

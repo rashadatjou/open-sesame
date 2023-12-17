@@ -3,6 +3,7 @@
 // macOS(14.2) with Swift(5.0)
 // 16/12/2023
 
+import LaunchAtLogin
 import SwiftUI
 
 class SettingModel: ObservableObject {
@@ -39,6 +40,10 @@ class SettingModel: ObservableObject {
       .compactMap { Int($0) }
 
     return clean
+  }
+
+  var launchAtLoginEnabled: Bool {
+    LaunchAtLogin.isEnabled
   }
 
   // - State
