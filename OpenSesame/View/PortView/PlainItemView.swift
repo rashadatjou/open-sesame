@@ -26,11 +26,9 @@ struct PlainItemView: View {
       }
       .padding(6)
       .frame(maxWidth: .infinity, alignment: .leading)
-      .background(isSelected ? Material.thin : Material.thick)
       .foregroundColor(isSelected ? .accentColor : .primary)
-      .clipShape(RoundedRectangle(cornerRadius: 8))
       .onHover(perform: { isSelected = $0 })
     }
-    .buttonStyle(.plain)
+    .buttonStyle(.bordered)
   }
 }

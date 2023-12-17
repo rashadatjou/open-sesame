@@ -50,7 +50,7 @@ struct PortView: View {
           List(dataSource, id: \.port) { port in
             NavigationLink(value: port) {
               PortItemView(icon: "network", port: port)
-                .shadow(color: .gray, radius: 2)
+                .shadow(radius: 2)
             }
             .listRowSeparator(.hidden)
           }
