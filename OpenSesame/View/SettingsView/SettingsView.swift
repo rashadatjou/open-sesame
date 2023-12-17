@@ -31,6 +31,8 @@ struct SettingsView: View {
         GroupBox("Other") {
           fieldLaunchAtLogin
         }
+
+        fieldBuyMeACoffee
       }
     }
     .frame(width: 350, height: 280)
@@ -89,7 +91,7 @@ struct SettingsView: View {
         "Refresh interval (seconds)",
         systemImage: "arrow.rectanglepath"
       )
-      
+
       Picker("", selection: model.$refreshInterval) {
         ForEach(SettingModel.refreshIntervalList, id: \.self) { option in
           Text(String(option)).tag(option)
@@ -109,6 +111,21 @@ struct SettingsView: View {
       )
       Spacer()
       LaunchAtLogin.Toggle {}
+    }
+  }
+
+  private var fieldBuyMeACoffee: some View {
+    VStack(alignment: .leading) {
+      Link(
+        "Buy me a coffee",
+        destination: URL(
+          string: "https://www.buymeacoffee.com/rashadatjou"
+        )!
+      )
+      .frame(maxWidth: .infinity)
+      .fontWeight(.medium)
+      .font(.title2)
+      .padding(4)
     }
   }
 }
