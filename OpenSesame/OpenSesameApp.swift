@@ -11,7 +11,7 @@ struct OpenSesameApp: App {
   var body: some Scene {
     MenuBarExtra(
       "Open Sesame",
-      systemImage: "door.french.open"
+      systemImage: "circle.circle.fill"
     ) {
       ContentView()
         .openSettingsAccess()
