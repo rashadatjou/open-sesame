@@ -35,7 +35,7 @@ struct SettingsView: View {
         fieldBuyMeACoffee
       }
     }
-    .frame(width: 350, height: 280)
+    .frame(width: 350, height: 300)
     .padding(20)
     .navigationTitle("Settings")
   }
@@ -80,7 +80,7 @@ struct SettingsView: View {
 
       Spacer(minLength: 8)
 
-      Text("Separate each port by comma or a new line.")
+      Text("Separate each port by comma.")
         .font(.footnote)
     }
   }
