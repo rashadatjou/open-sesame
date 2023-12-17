@@ -17,27 +17,42 @@ struct QuickActions: View {
   var openURL
 
   var body: some View {
-    HStack {
-      Button("Open URL") {
-        guard let url = URL(string: "http://localhost:\(port.port)") else {
-          // TODO: Show warning
-          return
-        }
+    HStack(alignment: .center) {
+      Button(
+        action: {
+          guard let url = URL(string: "http://localhost:\(port.port)") else {
+            // TODO: Show warning
+            return
+          }
 
-        openURL(url)
-      }
-      Button("Copy All") {
-        guard let json = rawData else {
-          // TODO: Show warning
-          return
+          openURL(url)
+        },
+        label: {
+          Text("Open URL")
+            .padding(6)
+            .frame(maxWidth: .infinity)
         }
+      )
 
-        let pasteBoard = NSPasteboard.general
-        pasteBoard.clearContents()
-        pasteBoard.setString(json, forType: .string)
-      }
+      Button(
+        action: {
+          guard let json = rawData else {
+            // TODO: Show warning
+            return
+          }
+
+          let pasteBoard = NSPasteboard.general
+          pasteBoard.clearContents()
+          pasteBoard.setString(json, forType: .string)
+        },
+        label: {
+          Text("Copy JSON")
+            .padding(6)
+            .frame(maxWidth: .infinity)
+        }
+      )
     }
-    .padding(.bottom, 8)
+    .padding([.leading, .trailing, .bottom], 8)
   }
 }
 
