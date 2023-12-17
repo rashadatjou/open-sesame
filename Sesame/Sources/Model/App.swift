@@ -33,6 +33,7 @@ public struct App: Codable {
   public var rawJSON: String? {
     do {
       let encoder = JSONEncoder()
+      encoder.outputFormatting = .withoutEscapingSlashes
       let data = try encoder.encode(self)
       return String(data: data, encoding: .utf8)
     } catch {
