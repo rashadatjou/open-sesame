@@ -25,8 +25,6 @@ OpenSesame is a macOS menu bar application designed to enhance your network secu
 
 ## Usage
 
-## Usage
-
 OpenSesame provides a user-friendly interface directly from your macOS menu bar, giving you instant access to a wealth of information about the network ports on your machine. Here's how to use OpenSesame to its fullest potential:
 
 1. **Access from the Menu Bar**: Click on the OpenSesame icon in the menu bar to open the dropdown interface.
