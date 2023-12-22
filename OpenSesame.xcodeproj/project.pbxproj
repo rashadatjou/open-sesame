@@ -120,8 +120,8 @@
 				79D4E5FC2B18B5EA00507B9C /* Sesame */,
 				795D101F2B17E455009A4C26 /* App */,
 				79D4E5FD2B18B6CF00507B9C /* Frameworks */,
-				79D4E5F42B18B56500507B9C /* OpenSesameTests */,
 				795D101E2B17E455009A4C26 /* Products */,
+				79D4E5F42B18B56500507B9C /* Tests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -175,12 +175,12 @@
 			path = PortDetailView;
 			sourceTree = "<group>";
 		};
-		79D4E5F42B18B56500507B9C /* OpenSesameTests */ = {
+		79D4E5F42B18B56500507B9C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				79D4E5F52B18B56500507B9C /* SesameTests.swift */,
 			);
-			path = OpenSesameTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		79D4E5FD2B18B6CF00507B9C /* Frameworks */ = {
