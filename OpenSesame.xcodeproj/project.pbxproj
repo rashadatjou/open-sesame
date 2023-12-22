@@ -118,10 +118,10 @@
 			isa = PBXGroup;
 			children = (
 				79D4E5FC2B18B5EA00507B9C /* Sesame */,
-				795D101F2B17E455009A4C26 /* OpenSesame */,
+				795D101F2B17E455009A4C26 /* App */,
+				79D4E5FD2B18B6CF00507B9C /* Frameworks */,
 				79D4E5F42B18B56500507B9C /* OpenSesameTests */,
 				795D101E2B17E455009A4C26 /* Products */,
-				79D4E5FD2B18B6CF00507B9C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,7 +134,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		795D101F2B17E455009A4C26 /* OpenSesame */ = {
+		795D101F2B17E455009A4C26 /* App */ = {
 			isa = PBXGroup;
 			children = (
 				795D10292B17E456009A4C26 /* OpenSesame.entitlements */,
@@ -145,7 +145,7 @@
 				7913692D2B2260D900CED5AD /* View */,
 				7913692A2B225D4100CED5AD /* ViewModel */,
 			);
-			path = OpenSesame;
+			path = App;
 			sourceTree = "<group>";
 		};
 		795D10262B17E456009A4C26 /* Preview Content */ = {
@@ -476,11 +476,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = OpenSesame/OpenSesame.entitlements;
+				CODE_SIGN_ENTITLEMENTS = App/OpenSesame.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"OpenSesame/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"App/Preview Content\"";
 				DEVELOPMENT_TEAM = UZ36E9K8AU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -506,11 +507,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = OpenSesame/OpenSesame.entitlements;
+				CODE_SIGN_ENTITLEMENTS = App/OpenSesame.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"OpenSesame/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"App/Preview Content\"";
 				DEVELOPMENT_TEAM = UZ36E9K8AU;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
